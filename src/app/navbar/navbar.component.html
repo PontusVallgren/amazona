@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    class="sidenav"
+    fixedInViewport
+    [mode]="'push'"
+    [opened]="isOpen"
+    disableClose
+  >
+    <mat-toolbar>
+      <span>Shopping by category</span>
+      <button
+        style="margin-left: 0.5em"
+        color="warn"
+        type="button"
+        aria-label="close side navigation"
+        mat-icon-button
+        (click)="toggleSideNav()"
+      >
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >close</mat-icon
+        >
+      </button>
+    </mat-toolbar>
+    <mat-nav-list *ngFor="let category of categorys">
+      <a mat-list-item href="#">{{ category }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        *ngIf="!isOpen"
+        type="button"
+        aria-label="Open side navigation"
+        mat-icon-button
+        (click)="toggleSideNav()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="menu-list">
+        <span>amazona</span>
+        <a mat-icon-button>
+          <mat-icon aria-label="shopping cart">shopping_cart</mat-icon>
+        </a>
+      </div>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
