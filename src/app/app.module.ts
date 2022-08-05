@@ -13,9 +13,23 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductCardComponent } from './products/product-list/product-card/product-card.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromApp from './store/app.reducer';
+import { ProductEffects } from './products/store/product.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ProductsComponent,
+    ProductListComponent,
+    ProductCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +42,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    HttpClientModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([ProductEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
