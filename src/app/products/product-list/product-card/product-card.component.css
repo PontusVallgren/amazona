@@ -1,0 +1,21 @@
+.product-card {
+  width: 250px;
+  padding: 2em;
+}
+
+.product-card > mat-card {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content:  flex-end;
+  border-radius: 0.3em;
+
+}
+
+.product-card > mat-card:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+img {
+  object-fit: contain;
+}

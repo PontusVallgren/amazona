@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatGridListModule,
     HttpClientModule,
+    MatCardModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([ProductEffects]),
   ],
