@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, EMPTY, map, mergeMap, Observable } from 'rxjs';
-import * as ProductActions from './product.acions';
+import * as ProductActions from './product.actions';
 import { Product } from 'src/app/models';
 
 @Injectable()

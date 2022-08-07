@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as ProductActions from './store/product.acions';
+import * as ProductActions from './store/product.actions';
 import * as fromApp from '../store/app.reducer';
 
 @Component({

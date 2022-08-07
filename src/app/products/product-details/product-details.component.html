@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="product">
+    <div>
+      <img [src]="product.image" />
+    </div>
+    <div class="product-details">
+      <h2>{{ product.title }}</h2>
+      <h4>{{ product.price }}</h4>
+      <mat-divider></mat-divider>
+      <p>{{ product.description }}</p>
+      <button color="primary" mat-raised-button>Add to cart</button>
+    </div>
+  </div>
+</div>

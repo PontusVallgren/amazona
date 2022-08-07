@@ -22,6 +22,8 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromApp from './store/app.reducer';
 import { ProductEffects } from './products/store/product.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsComponent,
     ProductListComponent,
     ProductCardComponent,
+    ProductDetailsComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     HttpClientModule,
     MatCardModule,
+    MatButtonModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([ProductEffects]),
   ],

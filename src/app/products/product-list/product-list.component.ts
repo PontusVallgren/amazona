@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models';
 import * as fromApp from '../../store/app.reducer';
-import * as ProductActions from '../../products/store/product.acions';
+import * as ProductActions from '../store/product.actions';
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -1,4 +1,4 @@
-<div class="product-card">
+<div class="product-card" [routerLink]="['/products', product.id]">
   <mat-card>
     <img mat-card-image [src]="product.image" />
     <mat-card-title>{{ product.title }}</mat-card-title>
