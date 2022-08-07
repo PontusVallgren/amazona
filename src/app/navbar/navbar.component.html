@@ -39,7 +39,13 @@
       <div class="menu-list">
         <span routerLink="/" style="cursor: pointer">amazona</span>
         <a mat-icon-button>
-          <mat-icon aria-label="shopping cart">shopping_cart</mat-icon>
+          <mat-icon
+            [matBadgeHidden]="cartItems == 0 ? true : false"
+            matBadge="{{ cartItems }}"
+            matBadgeColor="warn"
+            aria-label="shopping cart"
+            >shopping_cart</mat-icon
+          >
         </a>
       </div>
     </mat-toolbar>
