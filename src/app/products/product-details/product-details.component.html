@@ -8,7 +8,9 @@
       <h4>{{ product.price }}</h4>
       <mat-divider></mat-divider>
       <p>{{ product.description }}</p>
-      <button color="primary" mat-raised-button>Add to cart</button>
+      <button color="primary" mat-raised-button (click)="addToCart()">
+        Add to cart
+      </button>
     </div>
   </div>
 </div>

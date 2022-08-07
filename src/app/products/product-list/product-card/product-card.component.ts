@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models';
+import * as fromApp from '../../../store/app.reducer';
+import * as ProductActions from '../../store/product.actions';
 
 @Component({
   selector: 'app-product-card',
@@ -8,7 +11,13 @@ import { Product } from 'src/app/models';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
-  constructor() {}
+  constructor(private store: Store<fromApp.AppState>) {}
+
+  addToCart() {
+    this.store.dispatch(
+      ProductActions.addToCart({ product: this.product, quantity: 1 })
+    );
+  }
 
   ngOnInit(): void {}
 }

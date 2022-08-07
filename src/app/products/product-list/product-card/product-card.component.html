@@ -1,11 +1,17 @@
-<div class="product-card" [routerLink]="['/products', product.id]">
+<div class="product-card">
   <mat-card>
-    <img mat-card-image [src]="product.image" />
+    <img
+      mat-card-image
+      [src]="product.image"
+      [routerLink]="['/products', product.id]"
+    />
     <mat-card-title>{{ product.title }}</mat-card-title>
     <mat-card-subtitle>{{ product.rating.rate }}</mat-card-subtitle>
     <mat-divider inset></mat-divider>
     <mat-card-actions>
-      <button color="primary" mat-raised-button>Add to cart</button>
+      <button color="primary" mat-raised-button (click)="addToCart()">
+        Add to cart
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
