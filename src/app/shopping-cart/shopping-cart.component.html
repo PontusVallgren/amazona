@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="list-container">
+    <mat-list class="list list-title">
+      <mat-list-item>Image </mat-list-item>
+      <mat-list-item>Name </mat-list-item>
+      <mat-list-item>Quantity </mat-list-item>
+      <mat-list-item>Price </mat-list-item>
+      <mat-list-item>Remove </mat-list-item>
+    </mat-list>
+
+    <mat-list class="list" *ngFor="let item of cartItems">
+      <mat-list-item>
+        <img [src]="item.product.image" />
+      </mat-list-item>
+      <mat-list-item
+        ><a [routerLink]="['/products', item.product.id]">{{
+          item.product.title
+        }}</a></mat-list-item
+      >
+      <mat-list-item>{{ item.quantity }}</mat-list-item>
+      <mat-list-item>{{ item.product.price }}$</mat-list-item>
+      <mat-list-item
+        ><button color="primary" mat-raised-button>X</button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <h3>Total items: {{ cartItems.length }}</h3>
+      <h3>Price: {{ price }}$</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="checkout-btn" color="primary" mat-raised-button>
+        Check Out
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

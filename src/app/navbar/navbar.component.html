@@ -43,7 +43,9 @@
             [matBadgeHidden]="cartItems == 0 ? true : false"
             matBadge="{{ cartItems }}"
             matBadgeColor="warn"
+            matBadgeDescription="Number of items inside shopping cart"
             aria-label="shopping cart"
+            [routerLink]="['/shopping-cart']"
             >shopping_cart</mat-icon
           >
         </a>
