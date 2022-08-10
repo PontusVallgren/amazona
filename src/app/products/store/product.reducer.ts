@@ -56,5 +56,33 @@ export const productReducer = createReducer(
         cart: updateCart,
       };
     }
+  }),
+  on(ProductActions.deleteCartItem, (state, { id }) => {
+    return {
+      ...state,
+      cart: state.cart.filter((item) => {
+        return item.product.id !== id;
+      }),
+    };
+  }),
+  on(ProductActions.updateCartItemQuantity, (state, { quantity, id }) => {
+    //Find item that should update
+    const updateProduct = state.cart.map((item) => {
+      if (item.product.id === id) {
+        return {
+          product: item.product,
+          quantity: quantity,
+        };
+      } else {
+        return {
+          product: item.product,
+          quantity: item.quantity,
+        };
+      }
+    });
+    return {
+      ...state,
+      cart: updateProduct,
+    };
   })
 );

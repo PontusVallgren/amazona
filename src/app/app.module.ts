@@ -26,6 +26,7 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatSliderModule,
     LayoutModule,
     MatToolbarModule,
+    MatSelectModule,
     MatButtonModule,
     MatBadgeModule,
     MatSidenavModule,
