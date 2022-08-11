@@ -29,3 +29,7 @@ img {
   height: 70px;
   object-fit: contain;
 }
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
