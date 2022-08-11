@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
+import * as ProductSelectors from '../products/store/product.selectors';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ import * as fromApp from '../store/app.reducer';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   isOpen: boolean = false;
-  categorys: string[] = ['Shirts', 'Shorts', 'Pants'];
+  categories = this.store.select(ProductSelectors.selectAllProductCategories);
   sub!: Subscription;
   cartItems!: Number;
 

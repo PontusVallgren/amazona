@@ -21,8 +21,13 @@
         >
       </button>
     </mat-toolbar>
-    <mat-nav-list *ngFor="let category of categorys">
-      <a mat-list-item href="#">{{ category }}</a>
+    <mat-nav-list *ngFor="let category of categories | async">
+      <a
+        mat-list-item
+        [routerLink]="['/search']"
+        [queryParams]="{ category: category }"
+        >{{ category }}</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
