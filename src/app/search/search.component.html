@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="select-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Categories</mat-label>
+      <mat-select
+        [value]="categoriesDefaultValue"
+        (selectionChange)="onChangeCategory($event.value)"
+      >
+        <mat-option value="All">All</mat-option>
+        <mat-option
+          *ngFor="let category of categories | async"
+          [value]="category"
+        >
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Rating</mat-label>
+      <mat-select
+        [value]="ratingDefaultValue"
+        (selectionChange)="onChangeRating($event.value)"
+      >
+        <mat-option value="All">All</mat-option>
+        <mat-option *ngFor="let rating of ratings" [value]="rating">
+          {{ rating }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="product-container">
+    <mat-list style="display: flex; flex-wrap: wrap; justify-content: center">
+      <app-product-card
+        *ngFor="let product of products | async"
+        [product]="product"
+      ></app-product-card>
+    </mat-list>
+  </div>
+</div>
+
+<!-- (selectionChange)="onChange($event.value)" -->

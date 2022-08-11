@@ -27,6 +27,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MatBadgeModule } from '@angular/material/badge';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatSelectModule } from '@angular/material/select';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,11 +40,13 @@ import { MatSelectModule } from '@angular/material/select';
     ProductDetailsComponent,
     PageNotFoundComponent,
     ShoppingCartComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatSliderModule,
     LayoutModule,
     MatToolbarModule,

@@ -7,15 +7,24 @@ export interface cartItem {
   product: Product;
   quantity: Number;
 }
+export interface filterOptions {
+  category: string;
+  rating: number | string;
+}
 
 export interface State {
   products: Product[];
   cart: cartItem[];
+  filterBy: filterOptions;
 }
 
 const initialState: State = {
   products: [],
   cart: [],
+  filterBy: {
+    category: 'All',
+    rating: 'All',
+  },
 };
 
 export const productReducer = createReducer(
@@ -83,6 +92,12 @@ export const productReducer = createReducer(
     return {
       ...state,
       cart: updateProduct,
+    };
+  }),
+  on(ProductActions.filterProducts, (state, { filterBy }) => {
+    return {
+      ...state,
+      filterBy: filterBy,
     };
   })
 );

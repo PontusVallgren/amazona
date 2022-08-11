@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Product } from 'src/app/models';
+import { filterOptions } from './product.reducer';
 
 export const SET_PRODUCTS = '[Products] Set Products';
 export const FETCH_PRODUCTS = '[Products] Fetch Products';
@@ -7,6 +8,7 @@ export const ADD_TO_CART = '[Shopping Cart] Add to cart';
 export const DELETE_CART_ITEM = '[Shopping Cart] Delete cart item';
 export const UPDATE_CART_ITEM_QUANTITY =
   '[Shopping Cart] Update cart item quantity';
+export const FILTER_PRODUCTS = '[Products] Filter products';
 
 export const setProducts = createAction(
   SET_PRODUCTS,
@@ -27,4 +29,9 @@ export const deleteCartItem = createAction(
 export const updateCartItemQuantity = createAction(
   UPDATE_CART_ITEM_QUANTITY,
   props<{ quantity: number; id: number }>()
+);
+
+export const filterProducts = createAction(
+  FILTER_PRODUCTS,
+  props<{ filterBy: filterOptions }>()
 );
