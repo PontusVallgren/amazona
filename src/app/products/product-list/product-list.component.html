@@ -1,6 +1,6 @@
 <mat-list style="display: flex; flex-wrap: wrap; justify-content: center">
   <app-product-card
-    *ngFor="let product of products"
+    *ngFor="let product of products | async"
     [product]="product"
   ></app-product-card>
 </mat-list>

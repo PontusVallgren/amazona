@@ -4,6 +4,7 @@ import { Product } from 'src/app/models';
 import * as fromApp from '../../store/app.reducer';
 import * as ProductActions from '../store/product.actions';
 import { Subscription } from 'rxjs';
+import * as ProductsSelectors from '../store/product.selectors';
 
 @Component({
   selector: 'app-product-list',
@@ -11,18 +12,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  products: Product[] = [];
-  subscription!: Subscription;
+  products = this.store.select(ProductsSelectors.selectAllProducts);
+  // subscription!: Subscription;
 
   constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
-    this.subscription = this.store.select('products').subscribe((state) => {
-      this.products = state.products;
-    });
+    console.log(this.products);
+    // this.subscription = this.store.select('products').subscribe((state) => {
+    //   this.products = state.products;
+    // });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }
