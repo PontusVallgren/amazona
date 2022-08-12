@@ -1,4 +1,4 @@
-# Amazona
+# Amazona - Angular NgRx Project
 
 Practising using NgRx framework as state management.
 
